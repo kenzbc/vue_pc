@@ -1,0 +1,1184 @@
+@font-face {
+    font-family: 'TradeGothicLT-Bold';
+    src: url('/static/font/Trade-Gothic-LT-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TradeGothicLT';
+    src: url('/static/font/Trade-Gothic-LT.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'D-DINExp-Bold';
+    src: url('/static/font/D-DINExp.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'icon';  /* project id 320800 */
+    src: url('//at.alicdn.com/t/font_ab26jko71etmaemi.eot');
+    src: url('//at.alicdn.com/t/font_ab26jko71etmaemi.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_ab26jko71etmaemi.woff') format('woff'),
+            url('//at.alicdn.com/t/font_ab26jko71etmaemi.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_ab26jko71etmaemi.svg#icon') format('svg');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+body {
+    background-color: #f3f5f7;
+    font-family: "Microsoft YaHei", "TradeGothicLT-Bold", "PingFang SC", 'Source Han Sans CN', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.fix-bold-font {
+//text-shadow: silver 0px 0px 1px;
+}
+.flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    &.flex_wrap{
+        flex-wrap: wrap;
+    }
+    &.align_center {
+        align-items: center;
+    }
+    &.justify_between{
+        justify-content space-between
+    }
+    &.justify_end{
+        justify-content flex-end
+    }
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+ul,li {
+  list-style none
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+body, a {
+    color: #373A41;
+}
+
+input {
+    outline: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/*.good {*/
+/*color: #DABE9B;*/
+/*}*/
+
+/*.blue {*/
+/*color: #0C9DFC;*/
+/*}*/
+
+/*.red {*/
+/*color: #ff252f;*/
+/*}*/
+
+.mu-radio {
+    .mu-radio-icon {
+        .mu-radio-icon-uncheck {
+            color #747474
+        }
+    }
+}
+
+.level {
+    width 36px
+    height 15px
+    background-image url('/static/image/user-level.png')
+    background-size 500%
+    margin-left 8px
+    background-position 0 0
+    
+    for col in 0 1 2 3 4 5 {
+        for row in 0 1 2 3 4 5 6 7 8 9 {
+            &.{'level-' + (row + (col * 10))} {
+                background-position (-36 * col)px (-15 * row)px
+            }
+        }
+    }
+}
+
+.form {
+    .el-select {
+        .el-input {
+            .el-input__icon.is-reverse + .el-input__inner {
+                background-color #fff
+            }
+            .el-input__inner {
+                padding 0 20px
+                height 40px
+                background-color #FAFBFD
+                font-size 14px
+                border 1px solid #DDE4E9
+                color #A5A8B2
+                transition-duration .3s
+            }
+        }
+    }
+}
+
+.el-message-box {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+    
+    .el-message-box__header {
+        border-bottom 1px solid #E7EDF1
+        height 40px
+        line-height 40px
+        padding 0 20px
+        .el-message-box__title {
+            height 40px
+            color #373A41
+            font-size 15px
+        }
+        .el-message-box__headerbtn {
+            top 12px
+            right 15px
+            .el-message-box__close {
+                font-family 'icon' !important
+                color #A5A8B2
+                transition-duration .1s
+                
+                &:hover {
+                    color #82848c
+                }
+                &:before {
+                    content '\e614'
+                }
+            }
+        }
+    }
+    .el-message-box__content {
+        .el-message-box__message {
+            text-align center
+            font-size 14px
+            color #373A41
+        }
+    }
+    .el-message-box__btns {
+        text-align center
+        .el-button {
+            height 36px
+            line-height 36px
+            font-size 14px
+            
+            &.el-button--primary {
+                padding 0 27px
+                background: #0C9DFC;
+                border: 1px solid rgba(4, 151, 248, 0.34);
+                border-radius: 4px;
+                transition-duration .3s
+                
+                &:hover {
+                    box-shadow: 0 2px 4px 0 rgba(12, 157, 252, .4);
+                }
+            }
+        }
+    }
+}
+
+.el-tooltip__popper.is-light {
+    border 1px solid #0497F8
+    &[x-placement] .popper__arrow {
+        border-right-color #0497F8
+    }
+}
+
+.el-button {
+    padding 0 27px
+    height 36px
+    line-height 34px
+    background #FFFFFF
+    border 1px solid #0497F8
+    border-radius: 4px
+    color #0497F8
+    transition-duration .3s
+    position relative
+    user-select none
+    
+    &:not(.is-disabled):active {
+        top 1px
+    }
+    
+    .icon {
+        width 18px
+        height 18px
+        
+        + span {
+            margin-left 10px
+        }
+    }
+    
+    span, .icon {
+        display inline-block
+        vertical-align middle
+    }
+    
+    &:not(.is-disabled):hover {
+        box-shadow 0 2px 4px 2px rgba(12, 157, 252, 0.15)
+    }
+    
+    &.el-button--primary {
+        background-color #0497F8
+        color #fff
+        
+        &:not(.is-disabled):hover {
+            box-shadow 0 2px 4px 0 rgba(12, 157, 252, 0.40)
+        }
+        
+        &.is-disabled {
+            color: #bfcbd9;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #eef1f6;
+            border-color: #d1dbe5;
+        }
+    }
+}
+
+.el-dialog__wrapper {
+    
+    //z-index 10002 !important
+    
+    &.mini {
+        user-select none
+        
+        .el-dialog {
+            width 300px
+        }
+    }
+    
+    &.match-lineup-error {
+        .el-dialog__body {
+            padding 14px 20px
+            
+            .block {
+                + .block {
+                    margin-top 20px
+                }
+            }
+    
+            .title {
+                padding-left 0
+                height 22px
+                font-size 14px
+                color #0C9DFC
+                line-height 22px
+                margin-bottom 5px
+        
+                .icon,span {
+                    display inline-block
+                    vertical-align middle
+                }
+        
+                .icon {
+                    width 16px
+                    height 16px
+                    margin-right 5px
+                }
+            }
+    
+            p {
+                height 20px
+                line-height 20px
+                padding-left 22px
+            }
+            
+            .actions {
+                margin-top 20px
+                text-align center
+            }
+        }
+    }
+    
+    &.match-lineup-success {
+        .el-dialog__body {
+            text-align center
+            .text {
+                font-size 20px
+                margin-bottom 30px
+            }
+        }
+    }
+    
+    &.invitation {
+        .el-dialog {
+            width 540px
+            
+            .el-dialog__body {
+                padding 0
+                height 240px
+                
+                .scrollbar {
+                    height 240px
+                }
+            }
+            
+            .list {
+                .row {
+                    height 40px
+                    line-height 40px
+                    background-color #fff
+                    
+                    &:after {
+                        content ''
+                        display block
+                        clear both
+                    }
+    
+                    .col {
+                        float left
+                        text-align center
+                        font-size 14px
+                        height 40px
+                        
+                        img, span, .icon {
+                            display inline-block
+                            vertical-align middle
+                        }
+    
+                        &.date {
+                            width 190px
+                        }
+        
+                        &.user {
+                            width 180px
+                            text-align left
+                            
+                            img {
+                                width 30px
+                                height 30px
+                                margin-right 8px
+                                border-radius 50%
+                                border 1px solid #ccc
+                            }
+                        }
+        
+                        &.reward {
+                            width 170px
+                            
+                            .icon {
+                                margin-left 4px
+                                width 16px
+                                height 16px
+    
+                                &.ticket {
+                                    color #0C9DFC
+                                }
+    
+                                &.diamond {
+                                    color #4BDCBA
+                                }
+    
+                                &.fruit {
+                                    color #FA9B3C
+                                }
+                            }
+                        }
+                    }
+                    
+                    &.head {
+                        height 40px
+                        line-height 40px
+                        font-size 13px
+    
+                        .col {
+                            text-align center
+                        }
+                    }
+                    
+                    &:nth-child(odd) {
+                        background-color #f0f0f1
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    &.quick-buy {
+        .el-dialog {
+            min-width 320px
+            max-width 400px
+    
+            .text {
+                text-align center
+                .icon {
+                    margin-right 10px
+                    
+                    &.ticket {
+                        color #0C9DFC
+                    }
+                    
+                    &.diamond {
+                        color #4BDCBA
+                    }
+                }
+            }
+            
+            .actions {
+                text-align center
+                font-weight bold
+                margin-top 34px
+        
+                .cancel {
+                    padding 0 17px
+                }
+        
+                .buy {
+                    padding 0 20px
+                }
+        
+                .el-button {
+                    font-weight bold
+                    > * {
+                        height 36px
+                    }
+            
+                    .num {
+                        margin-left 5px
+                    }
+            
+            
+                    span,.icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+            
+                    .icon {
+                        width 14px
+                        height 14px
+                        margin 0 5px
+                
+                        + span {
+                            margin-left 0
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
+    
+    &.room-custom {
+        
+        &.buy-diamond {
+            .el-dialog {
+                .actions {
+                    .el-button {
+                        padding 0 32px
+                    }
+                }
+            }
+        }
+        
+        .el-dialog {
+            width 320px
+            
+            .text {
+                text-align center
+                .icon {
+                    margin-right 10px
+                }
+            }
+            
+            .actions {
+                text-align center
+                font-weight bold
+                margin-top 34px
+                
+                .cancel {
+                    padding 0 17px
+                }
+                
+                .buy {
+                    padding 0 20px
+                }
+                
+                .el-button {
+                    font-weight bold
+                    > * {
+                        height 36px
+                    }
+                    
+                    .num {
+                        margin-left 5px
+                    }
+                    
+                    
+                    span,.icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+                    
+                    .icon {
+                        width 14px
+                        height 14px
+                        margin 0 5px
+                        
+                        + span {
+                            margin-left 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &.paying {
+        .el-dialog {
+            height 230px
+        }
+        
+        .el-dialog__body {
+            line-height 22px
+            font-size 14px
+            padding 20px 0
+            text-align center
+            
+            ul {
+                margin-top 18px
+                display inline-block
+                li + li {
+                    margin-top 5px
+                }
+            }
+            
+            .actions {
+                margin-top 25px
+            }
+        }
+    }
+    
+    &.recharge {
+        
+        &.ticket {
+            .light {
+                color #0C9DFC
+            }
+        }
+        
+        &.key {
+            .light {
+                color #CB9B7A
+            }
+    
+            .el-button.el-button--primary {
+                background-color #CB9B7A
+                border-color #CB9B7A
+                
+                &:hover {
+                    box-shadow 0 2px 4px 0 rgba(189,138,103,0.40)
+                }
+            }
+        }
+    
+        &.diamond {
+            .light {
+                color #4BDCBA
+            }
+            
+        }
+        
+        .el-dialog {
+            height 280px
+            .el-dialog__body {
+                
+                .error {
+                    width 154px
+                    margin 0 auto
+                    
+                    .desc {
+                        line-height 22px
+                        height inherit
+                    }
+                    
+                    .qq {
+                        text-align center
+                        height 20px
+                        line-height 20px
+                        margin-top 20px
+                        display none
+                        
+                        span {
+                            font-family: TradeGothicLT-Bold
+                            font-size: 18px;
+                            display inline-block
+                            vertical-align middle
+                            
+                            &.q {
+                                height 16px
+                                line-height 16px
+                                background: #0C9DFC;
+                                border: 1px solid #0497F8;
+                                border-radius: 1px;
+                                font-family: TradeGothicLT
+                                text-align center
+                                font-weight bold
+                                font-size: 13px;
+                                color: #FFFFFF;
+                                padding 0 4px
+                                margin-right 6px
+                            }
+                        }
+                        
+                    }
+                }
+                
+                padding 42px 0 0
+                .icon {
+                    width 16px
+                    height 16px
+                    margin-left 5px
+                    &.ticket {
+                        color #0C9DFC
+                    }
+                    &.diamond {
+                        color #4BDCBA
+                    }
+                    &.key {
+                        color #CB9B7A
+                    }
+                }
+                
+                .type {
+                    height 22px
+                    line-height 22px
+                    text-align center
+                    
+                    span, .icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+                }
+                
+                .value {
+                    height 64px
+                    line-height 64px
+                    font-family TradeGothicLT-Bold
+                    font-size 54px
+                    text-align center
+                }
+                
+                .desc {
+                    height 22px
+                    line-height 22px
+                    text-align center
+                }
+                
+                .message {
+                    height 86px
+                    text-align center
+                }
+                
+                .actions {
+                    margin-top 35px
+                    text-align center
+                }
+            }
+        }
+    }
+    
+    &.saveLineUp {
+        
+        .el-dialog {
+            width 280px
+            height 150px
+            
+            .el-dialog__body {
+                padding 18px 0
+                text-align center
+                
+                p {
+                    height 20px
+                    line-height 20px
+                }
+                
+                .actions {
+                    margin-top 20px
+                }
+            }
+        }
+    }
+    
+    &.order-dialog {
+        &.custom {
+            .el-dialog {
+                //height 520px
+            }
+        }
+        
+        &.other {
+            .el-dialog {
+            }
+        }
+        .el-dialog {
+            
+            .el-dialog__body {
+                text-align center
+                padding 0
+                font-size 14px
+                font-family TradeGothicLT-Bold
+                
+                .fruit {
+                    color #FA9B3C
+                }
+                
+                .light {
+                    color: #0C9DFC
+                }
+                
+                .icon.key {
+                    color #DABE9B
+                }
+                
+                .num {
+                    font-family TradeGothicLT
+                    font-weight bold
+                    margin-left 5px
+                    font-size 16px
+                }
+                
+                .text {
+                    height 60px
+                    line-height 60px
+                    
+                    span,.icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+                    
+                    .icon {
+                        margin-left 3px
+                    }
+                }
+                
+                .info {
+                    height 110px
+                    background-color #FAFBFD
+                    border-top 1px solid #E7EDF1
+                    border-bottom 1px solid #E7EDF1
+                    
+                    .title {
+                        height 20px
+                        line-height 20px
+                        margin-top 16px
+                        text-align center
+                        font-size 14px
+                    }
+                    
+                    .row {
+                        padding 0 10px
+                        margin-top 15px
+                        height 50px
+                        line-height 50px
+                        
+                        .col {
+                            width calc(100% / 3)
+                            float left
+                            .val {
+                                height 20px
+                                line-height 20px
+                                font-size 16px
+                                .icon {
+                                    margin-left 3px
+                                    
+                                    span,.icon {
+                                        display inline-block
+                                        vertical-align middle
+                                    }
+                                }
+                            }
+                            .key {
+                                margin-top 5px
+                                height 16px
+                                line-height 16px
+                                font-size 12px
+                            }
+                        }
+                    }
+                }
+                
+                > div {
+                    &.arrow {
+                        position relative
+                        
+                        &:before {
+                            position absolute
+                            content ''
+                            display block
+                            top -1px
+                            border-left 10px solid transparent
+                            border-right 10px solid transparent
+                            border-top 10px solid #fff
+                            left calc((100% - 20px) / 2)
+                            z-index 1
+                        }
+                        
+                        &:after {
+                            position absolute
+                            content ''
+                            display block
+                            top 0
+                            left calc((100% - 20px) / 2)
+                            border-left 10px solid transparent
+                            border-right 10px solid transparent
+                            border-top 10px solid #E7EDF1
+                            z-index 0
+                        }
+                    }
+                }
+                
+                .join-info {
+                    height 70px
+                    line-height 70px
+                    padding 0 30px
+                    background-color #FAFBFD
+                    border-top 1px solid #E7EDF1
+                    border-bottom 1px solid #E7EDF1
+                    .icon {
+                        margin-left 3px
+                    }
+                }
+                .join-price {
+                    height 80px
+                    line-height 80px
+                    font-size 14px
+                    border-bottom 1px solid #E7EDF1
+                    
+                    .light {
+                        margin-left 5px
+                        font-size: 20px;
+                    }
+                    
+                    .icon {
+                        width 16px
+                        height 16px
+                        margin-left 4px
+                    }
+                    
+                    span, .icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+                }
+                .join-count {
+                    height 80px
+                    //border-bottom 1px solid #E7EDF1
+                    background-color #FAFBFD
+                    padding 20px 0
+                    
+                    .icon {
+                        width 22px
+                        height 22px
+                        cursor no-drop
+                        color #ccc
+                        
+                        &.light {
+                            cursor pointer
+                            color #0C9DFC
+                        }
+                    }
+                    
+                    .reduce {
+                        margin-left 12px
+                    }
+                    
+                    span {
+                        height 40px
+                        line-height 40px
+                    }
+                    
+                    > span, .icon {
+                        display inline-block
+                        vertical-align middle
+                    }
+                    
+                    .count {
+                        font-size 28px
+                        margin 0 18px
+                    }
+                }
+                .actions {
+                    .info {
+                        height 104px
+                        padding 27px 0
+                        
+                        > div {
+                            width calc((100% - 1px) / 2)
+                            
+                            + div {
+                                border-left 1px solid #E7EDF1
+                            }
+                            
+                            .key {
+                                height 20px
+                                line-height 20px
+                                font-size 14px
+                            }
+                            
+                            .val {
+                                margin-top 2px
+                                height 24px
+                                line-height 20px
+                                color #0C9DFC
+                                font-family: TradeGothicLT-Bold
+                                font-size: 20px
+                                
+                                span, .icon {
+                                    display inline-block
+                                    vertical-align middle
+                                }
+                                
+                                .icon {
+                                    margin-left 4px
+                                    width 18px
+                                    height 18px
+                                }
+                            }
+                        }
+                    }
+                    
+                    .order-info {
+                        padding 30px 25px
+                        font-size 14px
+                        
+                        .num {
+                            margin-left 10px
+                        }
+                        
+                        .icon {
+                            margin-left 3px
+                        }
+                        
+                        .this-use {
+                            margin-top 22px
+                            clear both
+                        }
+                    }
+                    
+                    .submit-button {
+                        margin-top 25px
+                        margin-bottom 25px
+                    }
+                }
+            }
+        }
+    }
+    
+    .el-dialog {
+        background: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+        border-radius: 2px;
+        width 360px
+        
+        .el-dialog__header {
+            padding 0 20px
+            height 40px
+            line-height 40px
+            border-bottom 1px solid #E7EDF1
+            
+            .el-dialog__title {
+                font-size 15px
+                text-shadow: #c0c0c0 0px 0px 1px;
+                color #373A41
+            }
+            
+            .el-dialog__headerbtn {
+                width 10px
+                height 20px
+                line-height 20px
+                text-align right
+                margin-top 10px
+                
+                .el-dialog__close {
+                    font-family 'icon' !important
+                    color #A5A8B2
+                    transition-duration .1s
+                    
+                    &:hover {
+                        color #82848c
+                    }
+                    &:before {
+                        content '\e614'
+                    }
+                }
+            }
+        }
+    }
+}
+
+.scrollbar {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.el-loading-mask {
+    z-index 50 !important
+    background-color: hsla(0, 0%, 100%, .5);
+}
+
+.room > .main .container .left .player-list .list .player-item {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+    border: 1px solid #E7EDF1;
+    box-shadow: 0 2px 4px 0 rgba(226, 234, 239, 0.80);
+    border-radius: 2px;
+    transition-duration: .3s;
+}
+
+.bump {
+    -webkit-animation: bump 0.1s ease-out 2 alternate;
+    -moz-animation: bump 0.1s ease-out 2 alternate;
+    -ms-animation: bump 0.1s ease-out 2 alternate;
+    animation: bump 0.1s ease-out 2 alternate;
+}
+
+// 竞拍弹窗
+.auction-dialog {
+    .el-dialog {
+        width 216px
+        height 330px
+        background url('/static/image/bj-pop.png')no-repeat 0 0
+        background-size 100% 100%
+
+        .el-dialog__header {
+            border 0
+            padding 0 8px
+
+            .el-dialog__headerbtn {
+                margin-top: 8px;
+
+                .el-dialog__close {
+                    color #fff
+                }
+            }
+        }
+
+        .el-dialog__body {
+            position relative
+            padding 0
+            .auction-dialog-main {
+                position absolute
+                left 50%
+                width 156px
+                transform translate(-50%, 0)
+                margin-top 80px
+
+                img {
+                    display block
+                    width 130px
+                    height 130px
+                    margin 0 auto
+                }
+                p {
+                    margin-top 20px
+                    text-align center
+                    font-size 13px
+                    line-height 18px
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    //.scrollbar {
+    //    width: 414px;
+    //    margin 0 auto;
+    //}
+    //[data-page=mall] {
+    //    #footer {
+    //        display none;
+    //    }
+    //}
+    //[data-page=mall-detail] {
+    //    #footer {
+    //        display none;
+    //    }
+    //}
+}
+
+@-webkit-keyframes bump {
+    from {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    
+    to {
+        -moz-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+        transform: scale(1.25)
+    }
+}
+
+@keyframes bump {
+    from {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    
+    to {
+        -moz-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+        transform: scale(1.25)
+    }
+}
+

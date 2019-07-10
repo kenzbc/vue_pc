@@ -1,0 +1,1022 @@
+#lineup {
+    .good {
+        color #DABE9B
+    }
+    
+    .red {
+        color #ff252f
+    }
+    
+    .blue {
+        color #0C9DFC
+    }
+    
+    > .main {
+        margin-top: 20px;
+        height: 100vh;
+        
+        .container {
+            background: #fafbfd;
+            box-shadow: 0 2px 4px 0 rgba(226, 234, 239, 0.80);
+            border: 1px solid #E7EDF1;
+            border-radius: 2px;
+            height 100vh
+            
+            .left > div > .title,
+            .right > .title {
+                font-size: 16px;
+                font-weight: bold;
+                height: 50px;
+                line-height: 50px;
+                padding: 0 20px;
+                border-bottom: 1px solid #e7edf1;
+                background-color #fff
+                position relative
+                .close {
+                    height: 26px;
+                    line-height: 24px;
+                    text-align: center;
+                    width: 26px;
+                    border-radius: 50%;
+                    background: #FF5C5C;
+                    position: absolute;
+                    right: 15px;
+                    top: 12px;
+                    display: block;
+                    transition-duration: .3s;
+                    color: #fff;
+        
+                    &:before {
+                        content: '\e614';
+                        font-size: 12px;
+                        text-align center
+                        font-family: 'icon';
+                    }
+        
+                    &:hover {
+                        box-shadow: 0 2px 5px 0 rgba(255, 92, 92, 0.62);
+                    }
+                }
+            }
+            
+            .left {
+                position relative
+                width: 788px;
+                border-right: 1px solid #E7EDF1;
+                -webkit-perspective: 800px;
+                -moz-perspective: 800px;
+                overflow hidden
+                
+                > .select-box,.saved-box {
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-transform-style: preserve-3d;
+                    -moz-transform-style: preserve-3d;
+                    -webkit-transition: .3s ease-in-out;
+                    -moz-transition: .3s ease-in-out;
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility: hidden;
+                    
+                    &.select-box {
+                        -webkit-transform: rotateY(180deg);
+                        -moz-transform: rotateY(180deg);
+                        z-index: 2;
+                        opacity 0
+                        
+                    }
+                    
+                    &.saved-box {
+                        -webkit-transform: rotateY(0);
+                        -moz-transform: rotateY(0);
+                        z-index: 2;
+                        opacity 1
+                        
+                        > .title {
+                            span {
+                                font-weight normal
+                                margin-left 25px
+                                display inline-block
+                                vertical-align middle
+                                font-size: 13px
+                                color: #A5A8B2
+                            }
+                        }
+                    }
+                }
+                
+                &.showSelectBox {
+                    > div {
+                        &.select-box {
+                            -webkit-transform: rotateY(0);
+                            -moz-transform: rotateY(0);
+                            opacity 1
+                        }
+                        
+                        &.saved-box {
+                            -webkit-transform: rotateY(-180deg);
+                            -moz-transform: rotateY(-180deg);
+                            opacity 0
+                        }
+                    }
+                }
+             
+                
+                .pos-nav {
+                    height: 50px;
+                    border-bottom: 1px solid #E7EDF1;
+                    box-shadow: 0 1px 4px 0 rgba(228, 228, 228, 0.87)
+                    position: relative;
+                    background-color: #fff;
+                    z-index 10
+                    
+                    .pos-item {
+                        user-select none
+                        height: 50px;
+                        line-height: 50px;
+                        float: left;
+                        width: calc(100% / 5);
+                        border-bottom: 2px solid transparent;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        background-color #F3F5F7
+                        border-bottom 1px solid #E7EDF1
+                        
+                        .icon {
+                            width 24px
+                            height 24px
+                            
+                            &.select {
+                                color #b4b7c1
+                                opacity .5
+                                transition-duration .3s
+                                width 16px
+                                height 16px
+                                margin-left 10px
+                            }
+                        }
+                        
+                        &.selected {
+                            background-color #fff
+                            
+                            .icon.select {
+                                color #0c9dfc
+                                opacity 1
+                            }
+                        }
+                        
+                        &:not(:last-child) {
+                            border-right: 1px solid #E7EDF1;
+                        }
+                        
+                        &.active {
+                            border-bottom: 2px solid #373A41;
+                        }
+                        
+                        img {
+                            height: 32px;
+                            width: 32px;
+                        }
+                        
+                        .pos-name {
+                            margin-left: 10px;
+                        }
+                        
+                        > * {
+                            vertical-align: middle;
+                            display: inline-block;
+                        }
+                        
+                    }
+                    
+                }
+                
+                .player-list {
+                    height: calc(100vh - 165px);
+                    position: relative;
+                    padding 15px 0
+                    
+                    .scrollbar {
+                        padding 51px 15px 0
+                        height 100%
+                    }
+                    
+                    .head {
+                        font-size: 14px;
+                        font-weight: bold;
+                        height: 36px;
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        right: 15px;
+                        z-index 12
+                        user-select none
+                        background: rgba(255, 255, 255, 0.98)
+                        border: 1px solid #E7EDF1;
+                        box-shadow: 0 2px 4px 0 rgba(5, 17, 25, 0.06);
+                        border-radius: 2px;
+                        
+                        .col {
+                            float: left;
+                            height 36px
+                            line-height 36px
+                            
+                            &.player {
+                                width: 325px;
+                                padding-left: 35px;
+                            }
+                            
+                            &.data {
+                                width: 235px;
+                                text-align: center;
+                            }
+                            
+                            &.price {
+                                width: 110px;
+                                text-align: center;
+                                cursor: pointer;
+                            }
+                            
+                            span, .icon {
+                                display: inline-block;
+                                vertical-align: middle;
+                                cursor pointer
+                            }
+                            
+                            .icon {
+                                width 10px
+                                margin-left 8px
+                                
+                                &.asc {
+                                    transform rotate(180deg)
+                                }
+                                
+                                &.desc {
+                                    transform rotate(0deg)
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    .list {
+                        .player-item {
+                            height: 100px;
+                            width: 100%;
+                            margin-bottom: 15px;
+                            background: #FFFFFF;
+                            border: 1px solid #E7EDF1;
+                            box-shadow: 0 2px 4px 0 rgba(226, 234, 239, 0.80);
+                            border-radius: 2px;
+                            transition-duration: .3s;
+                            
+                            &:hover {
+                                box-shadow: 0 0 5px 3px rgba(199, 207, 211, 0.3);
+                            }
+                            
+                            &.gary {
+                                > *:not(.action) {
+                                    opacity: .3;
+                                }
+                            }
+                            
+                            .avatar {
+                                width: 128px;
+                                height: 98px;
+                                position: relative;
+                                background-size: contain;
+                                cursor pointer
+                            }
+                            
+                            > * {
+                                float: left;
+                                height: 100px;
+                            }
+                            
+                            .info {
+                                width: 190px;
+                                padding: 15px 10px;
+                                font-family: TradeGothicLT-Bold;
+                                
+                                .player-name {
+                                    font-size: 22px;
+                                    line-height: 26px;
+                                    height: 26px;
+                                    cursor pointer
+                                    
+                                    span {
+                                        display inline-block
+                                        vertical-align middle
+                                    }
+    
+                                    .badge {
+                                        padding 0 3px
+                                        width 30px
+                                        height 18px
+                                        line-height 18px
+                                        border-radius 2px
+                                        font-size 12px
+                                        text-align center
+                                        margin-left 5px
+                                        color #fff
+                                        background-color #000
+        
+                                        &.status-1 {
+                                            background-color #0C9DFC
+                                        }
+        
+                                        &.status-2 {
+                                            background-color #bebebe
+                                        }
+        
+                                        &.status-4 {
+                                            background-color #ffb30f
+                                        }
+                                    }
+                                }
+    
+                                .team-name, .vs-team {
+                                    line-height: 18px;
+                                    height: 18px;
+                                }
+                                
+                                .team-name {
+                                    font-size: 14px;
+                                    color: #A5A8B2;
+                                    margin: 2px 0 4px;
+                                }
+                                
+                                .vs-team-list {
+                                    &:before {
+                                        content: '';
+                                        display: block;
+                                        clear: both;
+                                    }
+                                    
+                                    .vs-team {
+                                        background: #373A41;
+                                        border-radius: 2px;
+                                        padding: 0 5px;
+                                        float: left;
+                                        font-size: 12px;
+                                        color: #FFFFFF;
+                                        
+                                        + .vs-team {
+                                            margin-left: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .avg-score {
+                                width: 240px;
+                                padding: 0 10px 10px;
+                                text-align: center;
+                                position relative
+                                
+                                .chart {
+                                    > div {
+                                        margin 0 auto
+                                    }
+                                }
+                                
+                                .score {
+                                    font-size: 14px;
+                                    position absolute
+                                    bottom 15px
+                                    width 100%
+                                    text-align center
+                                }
+                                
+                            }
+                            
+                            .price {
+                                width: 110px;
+                                text-align: center;
+                                font-size: 24px;
+                                line-height: 100px;
+                                font-family: TradeGothicLT-Bold;
+                                transition-duration .3s
+                                
+                                span {
+                                    margin-left 2px
+                                }
+                            }
+                            
+                            .action {
+                                width: 70px;
+                                position: relative;
+                                
+                                .action .dialog {
+                                    left: -180px;
+                                    top: -102px;
+                                }
+                                
+                                .btn {
+                                    font-family: 'icon';
+                                    font-size: 32px;
+                                    cursor pointer
+                                    width: 32px;
+                                    height: 100px;
+                                    line-height 100px
+                                    background-size: 32px;
+                                    display: block;
+                                    margin: 0 auto;
+                                    
+                                    &:hover {
+                                        opacity: 1;
+                                    }
+                                    
+                                    &.add:before {
+                                        content: '\e604';
+                                        color: #0c9dfc;
+                                    }
+                                    
+                                    &.remove:before {
+                                        content: '\e602';
+                                        color: #ff5c5c;
+                                    }
+                                }
+                            }
+                            
+                            &:before {
+                                content: '';
+                                display: block;
+                                clear: both;
+                            }
+                            
+                            .avatar img {
+                                height: 90px;
+                                width: 90px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 10px;
+                            }
+                        }
+                    }
+                    
+                }
+                
+                .saved-box {
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    
+                    .filter {
+                        height: 70px;
+                        background-color: #fff;
+                        padding: 15px 20px;
+                        border-bottom: 1px solid #E7EDF1;
+                        
+                        .btn-group {
+                            width: 220px;
+                            border: 1px solid #0397F9;
+                            border-radius: 4px;
+                            overflow: hidden;
+                            
+                            a {
+                                width: 50%;
+                                display: inline-block;
+                                background-color: #fff;
+                                height: 36px;
+                                line-height: 36px;
+                                text-align: center;
+                                font-weight: bold;
+                                font-size: 14px;
+                                color: #0C9DFC;
+                            }
+                            
+                            .close {
+                                height: 26px;
+                                line-height: 24px;
+                                text-align: center;
+                                width: 26px;
+                                border-radius: 50%;
+                                background: #FF5C5C;
+                                position: absolute;
+                                right: 22px;
+                                top: 22px;
+                                display: block;
+                                transition-duration: .3s;
+                                color: #fff;
+                                
+                                &:before {
+                                    content: '\e614';
+                                    font-size: 12px;
+                                    text-align center
+                                    font-family: 'icon';
+                                }
+                                
+                                &:hover {
+                                    box-shadow: 0 2px 5px 0 rgba(255, 92, 92, 0.62);
+                                }
+                            }
+                            
+                            a.active {
+                                color: #fff;
+                                background-color: #0C9DFC;
+                            }
+                        }
+                    }
+                    
+                    .group-list {
+                        height calc(100% - 65px)
+                        .scrollbar {
+                            height 100%
+                            padding-top 15px
+                        }
+                        
+                        .group {
+                            width: 750px;
+                            height: 320px;
+                            background: #FFFFFF;
+                            border: 1px solid #E7EDF1;
+                            box-shadow: 0 2px 4px 0 rgba(226, 234, 239, 0.80);
+                            border-radius: 2px;
+                            margin: 0 auto 15px;
+    
+                            > .title {
+                                height 40px
+                                line-height 40px
+                                padding 0 10px
+                                font-size: 14px
+                                color: #586077
+                                border-bottom 1px solid #E7EDF1
+        
+                                .icon,span {
+                                    display inline-block
+                                    vertical-align middle
+                                }
+        
+                                .icon {
+                                    width 20px
+                                    height 20px
+                                    margin-right 7px
+                                }
+                            }
+                            
+                            .list {
+                                height: 220px;
+                                overflow: hidden;
+                                
+                                .item {
+                                    padding: 10px 10px 0;
+                                    float: left;
+                                    width: calc(100% / 5);
+                                    height: 220px;
+                                    border-left: 1px solid #E7EDF1;
+                                    border-bottom: 1px solid #E7EDF1;
+                                    
+                                    &:first-child {
+                                        border-left: none;
+                                    }
+                                    
+                                    .avatar {
+                                        cursor pointer
+                                        user-select none
+                                        height: 156px;
+                                        position: relative;
+                                        background-size: cover;
+                                        background-position: center;
+                                        font-family: TradeGothicLT-Bold;
+                                        
+                                        .score {
+                                            font-size: 22px;
+                                            color: #586077;
+                                            height: 26px;
+                                            line-height: 26px;
+                                            position: absolute;
+                                            right: 0;
+                                            top: 0;
+                                        }
+                                        
+                                        img {
+                                            width: auto;
+                                            height: 120px;
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 5px;
+                                        }
+                                    }
+                                    
+                                    .name {
+                                        margin-top: 5px;
+                                        height: 22px;
+                                        line-height: 22px;
+                                        font-family: TradeGothicLT-Bold;
+                                        font-size: 18px;
+                                    }
+                                    
+                                    .pos {
+                                        height: 16px;
+                                        font-size: 12px;
+                                        color: #A5A8B2;
+                                        
+                                        .icon {
+                                            width 16px
+                                            height 16px
+                                            margin-right 5px
+                                        }
+                                        
+                                        .icon,span {
+                                            display inline-block
+                                            vertical-align middle
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            
+                            .actions {
+                                height: 60px;
+                                line-height: 60px;
+                                padding: 0 20px;
+                                font-size: 14px;
+                                
+                                span {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                                
+                                .btn {
+                                    border-radius: 4px;
+                                    height: 36px;
+                                    line-height: 36px;
+                                    display: inline-block;
+                                    width: 100px;
+                                    color: #fff;
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    transition-duration: .3s;
+                                    user-select none
+                                    cursor pointer
+                                    
+                                    &.edit {
+                                        background: #0C9DFC;
+                                        border: 1px solid #0397F9;
+                                        box-shadow: 0 2px 4px 0 rgba(12, 157, 252, 0.40);
+                                        &:hover {
+                                            box-shadow: 0 2px 8px 1px rgba(12, 157, 252, 0.6);
+                                        }
+                                    }
+                                    
+                                    &.remove {
+                                        background #FF5C5C
+                                        border 1px solid #FF5C5C
+                                        box-shadow: 0 2px 4px 0 rgba(255, 92, 92, 0.40);
+                                        &:hover {
+                                            box-shadow: 0 2px 8px 1px rgba(255, 92, 92, 0.6);
+                                        }
+                                    }
+                                    
+                                    &:last-child {
+                                        margin-left: 15px;
+                                    }
+                                    
+                                }
+                                
+                                .fl > span:first-child {
+                                    margin-right: 30px;
+                                }
+                                
+                                .blue {
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+            .right {
+                width: 411px;
+                margin-left: -1px;
+                border-left: 1px solid #E7EDF1;
+                
+                .select-player-list {
+                    .player-item {
+                        height: 80px;
+                        background: #FFFFFF;
+                        border-bottom: 1px solid #E7EDF1;
+                        box-shadow: 0 -1px 4px 0 rgba(226, 234, 239, 0.80);
+                        cursor: pointer;
+                        position: relative;
+                        
+                        .action {
+                            width: 70px;
+                            position: relative;
+                            
+                            .btn {
+                                width: 32px;
+                                height: 100px;
+                                line-height 100px
+                                background-size: 32px;
+                                font-size: 32px;
+                                display: block;
+                                margin: 0 auto;
+                                
+                                &:hover {
+                                    opacity: 1;
+                                }
+                                
+                                &.add:before {
+                                    content: '\e604';
+                                    color: #0c9dfc;
+                                }
+                                
+                                &.remove:before {
+                                    content: '\e602';
+                                    color: #ff5c5c;
+                                }
+                            }
+                        }
+                        
+                        .tip {
+                            position absolute
+                            right 40px
+                            line-height 80px
+                            height 80px
+                            top 0
+                            bottom 0
+                            opacity 0.2
+                            font-weight bold
+                            font-size 22px
+                            color #A5A8B2
+                        }
+                        
+                        &:hover {
+                            &:before {
+                                content: '';
+                                display: block;
+                                left: 1px;
+                                right: 1px;
+                                top: 0;
+                                bottom: 1px;
+                                box-shadow: 0 0 1px 1px rgba(12, 157, 252, 0.5);
+                                position: absolute;
+                            }
+                        }
+                        
+                        &.null {
+                            background-color: #f3f5f7;
+                            
+                            &:hover {
+                                box-shadow: none;
+                                background-color #f8fcff
+                            }
+                        }
+                        
+                        .avatar {
+                            width: 100px;
+                            height: 78px;
+                            position: relative;
+                            left: 1px;
+                            background-size: cover;
+                            
+                            img {
+                                height: 70px;
+                                width: 70px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 10px;
+                            }
+                        }
+                        
+                        > * {
+                            float: left;
+                            height: 80px;
+                        }
+                        
+                        .info {
+                            width: 120px;
+                            padding: 20px 0 20px 10px;
+                            font-family: TradeGothicLT-Bold;
+                            
+                            .player-name {
+                                font-size: 18px;
+                                line-height: 25px;
+                                height: 25px;
+                                overflow hidden
+                                text-overflow ellipsis
+                                white-space nowrap
+                            }
+                            
+                            .team-name {
+                                color: #A5A8B2;
+                                font-size: 12px;
+                                
+                                span, .icon {
+                                    display inline-block
+                                    vertical-align middle
+                                }
+                                
+                                .icon {
+                                    width 16px
+                                    height 16px
+                                    margin-right 3px
+                                }
+                                
+                                > * {
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        
+                        .avg-score,
+                        .price {
+                            width: 70px;
+                            text-align: center;
+                            line-height: 80px;
+                            font-family: TradeGothicLT-Bold;
+                            font-size: 22px;
+                            color: #DABE9B;
+                            
+                            span {
+                                margin-left 2px
+                            }
+                        }
+                        
+                        .avg-score {
+                            color: #0C9DFC;
+                        }
+                        
+                        .action {
+                            width: 60px;
+                            position: absolute;
+                            right: 0;
+                            
+                            .btn {
+                                font-family: 'icon';
+                                width: 20px;
+                                height 80px
+                                line-height 80px
+                                margin: 0 auto
+                                font-size: 20px;
+                            }
+                        }
+                        
+                        .pos {
+                            line-height: 80px;
+                            padding: 0 20px;
+                            font-size: 18px;
+                            color: #A5A8B2;
+                            
+                            span, .icon {
+                                display inline-block
+                                vertical-align middle
+                            }
+                            
+                            .icon {
+                                width 30px
+                                height 30px
+                                margin-right 10px
+                            }
+                        }
+                    }
+                }
+                
+                .action-and-info {
+                    background-color #fff
+                    height: 150px;
+                    border-bottom: 1px solid #E7EDF1;
+                    
+                    .actions {
+                        padding: 20px
+                        
+                        input {
+                            width 100%
+                            height 36px
+                            line-height 36px
+                            padding 0 10px
+                            background: #FAFBFD;
+                            border: 1px solid #D0D8E1;
+                            border-radius: 4px;
+                            font-size: 14px;
+    
+                            &::-moz-placeholder {color: #A5A8B2}
+                            &:-ms-input-placeholder {color: #A5A8B2}
+                            &::-webkit-input-placeholder {color: #A5A8B2}
+                        }
+                    }
+                    
+                    .info {
+                        padding: 0 10px;
+                        
+                        .item {
+                            display: block;
+                            float: left;
+                            width: calc(100% / 2);
+                            text-align: center;
+                            position: relative;
+                            
+                            .dialog {
+                                left: -140px;
+                                top: -130px;
+                            }
+                            
+                            .key {
+                                font-size: 14px;
+                                height: 20px;
+                                line-height: 20px;
+                            }
+                            
+                            .val {
+                                margin-bottom: 5px;
+                                font-size: 24px;
+                                height: 28px;
+                                line-height: 30px;
+                                font-family: TradeGothicLT-Bold;
+                                
+                                span {
+                                    margin-left 3px
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    > .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        
+        .container {
+            background-color: #fff;
+            border: 1px solid #E7EDF1;
+            box-shadow: 0 -1px 4px 0 rgba(226, 234, 239, 0.80);
+            height: 80px;
+            padding: 22px 30px;
+            
+            .join {
+                height: 36px;
+                line-height: 36px;
+                
+                .count {
+                    font-family: TradeGothicLT-Bold;
+                    font-size: 24px;
+                    color: #0C9DFC;
+                    margin-left: 10px;
+                }
+                
+                > span {
+                    vertical-align: middle;
+                }
+            }
+            
+            .cancel-btn {
+                margin-right 20px
+                background: #FFFFFF;
+                border: 1px solid #D4DAE0;
+                border-radius: 4px;
+                color: #373A41;
+                transition-duration .3s
+                
+                &:hover {
+                    box-shadow: 0 1px 4px 0 rgba(5,17,25,0.06);
+                }
+            }
+            
+            .submit-btn {
+                user-select none
+                cursor pointer
+                background: #0C9DFC;
+                border: 1px solid #0397F9;
+                border-radius: 4px;
+                height: 36px;
+                line-height: 36px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                color: #fff;
+                font-weight: bold;
+                padding: 0 25px;
+                transition-duration .3s
+                
+                &:hover {
+                    box-shadow: 0 2px 4px 0 rgba(12, 157, 252, 0.40);
+                }
+                
+                &.disabled {
+                    opacity: 0.3;
+                    background: #0C9DFC;
+                    border: 1px solid #0397F9;
+                    border-radius: 4px;
+                    cursor: no-drop;
+                }
+            }
+        }
+    }
+}

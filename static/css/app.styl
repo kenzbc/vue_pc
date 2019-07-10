@@ -1,0 +1,472 @@
+
+#app {
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+
+    &[data-page=my-order-detail] {
+        > .scrollbar {
+            padding-top 80px
+        }
+    }
+
+    > .scrollbar {
+        height 100vh
+        position relative
+      .ps-scrollbar-x-rail{
+        display:none;
+    }
+    }
+
+}
+
+#pop {
+    .el-dialog {
+        width 720px
+        height 360px
+        background transparent
+        box-shadow none
+
+        .close-btn {
+            position absolute
+            width 36px
+            height 36px
+            right 0
+            top -46px
+            display block
+            z-index 5
+            color #fff
+            cursor pointer
+
+            .icon {
+                width 36px
+                height 36px
+            }
+        }
+
+        .el-dialog__header {
+            display none
+        }
+
+        .background {
+            position absolute
+            left 0
+            right 0
+            top 0
+            bottom 0
+            background-position center
+            background-size cover
+            background-repeat no-repeat
+
+            a {
+                display block
+                width 100%
+                height 100%
+            }
+        }
+    }
+}
+
+#login {
+    .el-dialog {
+        width 840px
+        height 420px
+        border-radius 2px
+        overflow hidden
+        background transparent
+
+        .el-dialog__header {
+            display none
+        }
+
+        .el-dialog__body {
+            height 420px
+            padding 0
+            color #373A41
+
+            > div {
+                height 420px
+            }
+
+            .main {
+                width 480px
+                padding 20px 50px
+                background-color #fff
+
+                .tabs {
+
+                    .tab {
+                        display inline-block
+                        text-align center
+                        line-height 24px
+                        font-size 18px
+                        font-weight bold
+                        border-bottom 2px solid #0C9DFC
+                        padding 7px 12px
+                    }
+                }
+
+                .form {
+                    margin-top 30px
+                    margin-bottom 20px
+
+                    .form-input {
+                        box-sizing content-box
+                        height 60px
+                        line-height 60px
+                        background-color #fff
+                        border-bottom 1px solid #E7EDF1
+                        clear both
+                        position relative
+
+                        &.area-select-form {
+                            width 280px
+                        }
+
+                        .icon, input {
+                            display block
+                            float left
+                        }
+
+
+                        .area-select {
+                            .el-input {
+                                height 60px
+                                width 240px
+                            }
+                        }
+
+                        .area-number {
+                            height 60px
+                            line-height 60px
+                            width 80px
+                            display block
+                            text-align right
+                            padding-right 10px
+                            border-bottom 1px solid #E7EDF1
+                            position absolute
+                            right -100px
+                            top 0
+                        }
+
+                        .icon {
+                            width 22px
+                            height 22px
+                            margin 18px 8px
+                            vertical-align middle
+                            color #A5A8B2
+                        }
+
+                        input {
+                            width calc(100% - 40px)
+                            height 60px
+                            border none
+                            background none
+                            padding 0 10px
+                            font-size 14px
+
+                            &::-moz-placeholder {
+                                color: #A5A8B2;
+                                opacity .5;
+                            }
+                            &:-ms-input-placeholder {
+                                color: #A5A8B2;
+                                opacity .5;
+                            }
+                            &::-webkit-input-placeholder {
+                                color: #A5A8B2;
+                                opacity .5;
+                            }
+                        }
+
+                        .code-img {
+                            cursor pointer
+                            position absolute
+                            height 40px
+                            right 0
+                            top 10px
+                            z-index 10
+                        }
+                    }
+                }
+
+                .actions {
+
+                    &.third-platform {
+                        a.button {
+                            display inline-block
+                            margin-left 15px
+                        }
+                        .button.submit {
+                            width 180px
+                            //margin-right 5px
+                        }
+                    }
+
+                    a.button {
+                        display none
+                    }
+
+                    .button {
+                        width 50px
+                        height 50px
+                        border none
+                        display inline-block
+                        vertical-align middle
+
+                        .icon {
+                            width 50px
+                            height 50px
+                            color #DADEE1
+                            transition-duration .3s
+
+                            &:hover {
+                                &.weibo {
+                                    color #f97474
+                                }
+
+                                &.qq {
+                                    color #6caff5
+                                }
+
+                                &.wechat {
+                                    color #6dca6d
+                                }
+                            }
+                        }
+
+                        &.submit {
+                            width 100%
+                            margin-right 0
+                            height 50px
+                            font-size 16px
+                            background-image: linear-gradient(45deg, #0FB3FF 0%, #006AEE 100%);
+                            border-radius: 2px;
+                            color #fff
+
+                            &:not(.is-disabled):hover {
+                                box-shadow: 0 3px 6px 0 rgba(17, 149, 252, 0.30);
+                            }
+                        }
+
+                        &.is-disabled {
+                            color: #bfcbd9;
+                            cursor: not-allowed;
+                            background-image: none;
+                            background-color: #eef1f6;
+                            border-color: #d1dbe5;
+                        }
+                    }
+
+                }
+
+                .links {
+                    margin-top 24px
+
+                    a {
+                        height 20px
+                        line-height 20px
+                        font-size 14px
+                        color #A5A8B2
+                        opacity .5
+                        transition-duration .3s
+
+                        &:hover {
+                            opacity 1
+                        }
+
+                    }
+                }
+            }
+
+            .bg {
+                cursor pointer
+                width 360px
+                background-image url('/static/image/login-right-bg.jpg')
+                background-size cover
+                background-position center
+                background-repeat no-repeat
+            }
+        }
+    }
+
+}
+
+#share {
+    .el-dialog {
+        width 500px
+        .el-dialog__body {
+            padding 20px 0
+            text-align center
+
+            .room-info {
+                line-height 24px
+                padding 0 50px
+
+                .room-title {
+                    color #A5A8B2
+                    font-size 14px
+                }
+
+                .light {
+                    font-family TradeGothicLT-Bold
+                    font-size 18px
+                    color #0C9DFC
+                }
+
+                .room-code {
+                    height 22px
+                    line-height 22px
+                    margin-top 5px
+                    font-size 16px
+                }
+            }
+
+            .link-box {
+                margin-top 15px
+                line-height 36px
+
+                input {
+                    width 250px
+                    height 36px
+                    padding 0 15px
+                    background #FAFBFD
+                    border 1px solid #DDE4E9
+                    border-radius 4px
+                    margin 0 15px
+                }
+            }
+        }
+    }
+}
+
+
+.pop-address {
+  .el-dialog {
+    width: 600px;
+    height: 410px;
+    background: #fff;
+    border-radius: 4px;
+    .el-dialog__header {
+      height: 46px;
+      line-height 46px;
+      background: rgba(13, 141, 252, 1);
+      border-radius: 4px 4px 0 0;
+      .el-dialog__headerbtn {
+        display inline-block
+        margin-top 12px
+        .el-dialog__close {
+          font-size 12px
+          color: #fff;
+        }
+      }
+      .el-dialog__title {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+    .el-dialog__body {
+      padding: 0 !important;
+      .address-details {
+        padding 30px 20px
+        overflow hidden
+        li + li {
+          margin-top 14px
+        }
+        .lable {
+          font-size: 14px;
+          font-weight: 400;
+          display inline-block
+          width 110px
+          text-align right
+          color #373A41
+        }
+        .select-address {
+          margin-right 14px
+          height 40px
+        }
+        .el-input {
+          height 40px
+          width: 128px;
+          .el-input__inner {
+            height 40px !important
+            font-size: 14px;
+            font-family: "Microsoft YaHei", "TradeGothicLT-Bold", "PingFang SC", 'Source Han Sans CN', sans-serif;
+          }
+        }
+        .input-address {
+          width calc(100% - 120px)
+        }
+        .input-text {
+          width 240px
+        }
+        .btn-box {
+          text-align center
+          margin-top 20px
+          .ok {
+            width: 110px;
+            height: 34px;
+            background: #0d8dfc;
+            border-radius: 20px;
+            line-height: 32px;
+            margin-right 10px
+            font-family: "Microsoft YaHei", "TradeGothicLT-Bold", "PingFang SC", 'Source Han Sans CN', sans-serif;
+            &:hover {
+              box-shadow 0 1px 1px 0 rgba(12, 157, 252, 0.4)
+            }
+          }
+          .cancel {
+            width: 110px;
+            height: 34px;
+            border-radius: 20px;
+            line-height: 20px;
+            border: 1px solid rgba(235, 235, 237, 1);
+            background #FFF
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(101, 105, 115, 1);
+            font-family: "Microsoft YaHei", "TradeGothicLT-Bold", "PingFang SC", 'Source Han Sans CN', sans-serif;
+            &:hover {
+              box-shadow 0 1px 1px 0 rgba(95, 101, 117, 0.3)
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pop-address .el-dialog {
+    width 90%
+
+    .el-dialog__body{
+
+      .address-details{
+        padding 10px
+
+        .lable {
+          width 70px
+          font-size 14px
+        }
+
+        .select-address {
+          margin-right 0
+          width calc((100% - 90px)/3)
+          > div {
+            width 70px
+          }
+        }
+        .el-input__icon {
+          width 20px
+        }
+      }
+    }
+  }
+}
+
